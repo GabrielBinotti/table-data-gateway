@@ -38,23 +38,24 @@ class ProductGateway
         return $stmt->execute();
     }
 
-    public function save(Product $product)
+    public function save($product)
     {
+       
         if (empty($product->idProduct)) {
             $stmt = $this->pdo->prepare("INSERT INTO product (name, price, qtd, dt) VALUES(:name, :price, :qtd, :dt)");
-            $stmt->bindValue(":name",   $product->name,     \PDO::PARAM_INT);
+            $stmt->bindValue(":name",   $product->name,     \PDO::PARAM_STR);
             $stmt->bindValue(":price",  $product->price,    \PDO::PARAM_STR);
             $stmt->bindValue(":qtd",    $product->qtd,      \PDO::PARAM_INT);
             $stmt->bindValue(":dt",     $product->dt,       \PDO::PARAM_STR);
             return $stmt->execute();
         } else {
-
-            $stmt = $this->pdo->prepare("UPDATE db_store SET name = :name, price = :price, qtd = :qtd, dt = :dt WHERE idProduct = :id)");
-            $stmt->bindValue(":name",       $product->name,         \PDO::PARAM_INT);
+           
+            $stmt = $this->pdo->prepare("UPDATE product SET name = :name, price = :price, qtd = :qtd, dt = :dt WHERE idProduct = :id");
+            $stmt->bindValue(":name",       $product->name,         \PDO::PARAM_STR);
             $stmt->bindValue(":price",      $product->price,        \PDO::PARAM_STR);
             $stmt->bindValue(":qtd",        $product->qtd,          \PDO::PARAM_INT);
             $stmt->bindValue(":dt",         $product->dt,           \PDO::PARAM_STR);
-            $stmt->bindValue(":ipProduct",  $product->idProduct,    \PDO::PARAM_INT);
+            $stmt->bindValue(":id",         $product->idProduct,    \PDO::PARAM_INT);
             return $stmt->execute();
         }
     }
