@@ -1,0 +1,5 @@
+{
+    "require": {
+        "gabriel-binotti/connection-pdo": "^1.0"
+    }
+}

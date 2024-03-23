@@ -1,0 +1,48 @@
+{
+    "packages": [
+        {
+            "name": "gabriel-binotti/connection-pdo",
+            "version": "1.0.1",
+            "version_normalized": "1.0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GabrielBinotti/connection.git",
+                "reference": "836537627ff4b9cb40f502cedbd9cb883329554c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GabrielBinotti/connection/zipball/836537627ff4b9cb40f502cedbd9cb883329554c",
+                "reference": "836537627ff4b9cb40f502cedbd9cb883329554c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "time": "2024-03-23T16:39:31+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "GabrielBinottiDatabase\\": "databaseApplication"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Gabriel da Silva Binotti",
+                    "email": "gabrielbinotti.dev@gmail.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/GabrielBinotti/connection/issues",
+                "source": "https://github.com/GabrielBinotti/connection/tree/1.0.1"
+            },
+            "install-path": "../gabriel-binotti/connection-pdo"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}
